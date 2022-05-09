@@ -111,6 +111,7 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := \
     LLVM=1 \
     LLVM_IAS=1
 TARGET_KERNEL_SOURCE := kernel/oneplus/sm8350
+TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CONFIG := vendor/lahaina-qgki_defconfig
 
 # Kernel modules
