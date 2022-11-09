@@ -64,6 +64,7 @@ PRODUCT_PACKAGES += \
     libsndmonitor \
     libspkrprot \
     libssrec \
+    libstdc++.vendor \
     libvolumelistener \
     sound_trigger.primary.lahaina:32
 
@@ -106,9 +107,9 @@ PRODUCT_COPY_FILES += \
 
 # Boot control
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.1-impl-qti \
-    android.hardware.boot@1.1-impl-qti.recovery \
-    android.hardware.boot@1.1-service
+    android.hardware.boot@1.2-impl-qti \
+    android.hardware.boot@1.2-impl-qti.recovery \
+    android.hardware.boot@1.2-service
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -124,6 +125,22 @@ PRODUCT_COPY_FILES += \
 
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
+
+
+# Camera
+PRODUCT_PACKAGES += \
+    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-service_64 \
+    vendor.qti.hardware.camera.postproc@1.0.vendor
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
+    frameworks/native/data/etc/android.hardware.camera.front.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
+    frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
+    frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml
+
+# DebugFS
+PRODUCT_SET_DEBUGFS_RESTRICTIONS := false
 
 # Display
 PRODUCT_PACKAGES += \
@@ -229,7 +246,6 @@ PRODUCT_PACKAGES += \
     fstab.default.vendor_ramdisk \
     init.class_main.sh \
     init.oplus.hw.rc \
-    init.oplus.hw.rc.recovery \
     init.oplus.rc \
     init.oplus.sh \
     init.qcom.early_boot.sh \
@@ -305,9 +321,6 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 #$(call inherit-product, hardware/oplus/overlay/qssi/qssi.mk)
-
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_PACKAGES += \
@@ -479,4 +492,4 @@ PRODUCT_PACKAGES += \
     WfdCommon
 
 # Inherit from the proprietary files makefile.
-#$(call inherit-product, vendor/oneplus/sm8350-common/sm8350-common-vendor.mk)
+$(call inherit-product, vendor/oneplus/sm8350-common/sm8350-common-vendor.mk)

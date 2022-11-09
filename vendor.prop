@@ -5,16 +5,11 @@ aaudio.mmap_policy=2
 persist.vendor.audio.fluence.speaker=true
 persist.vendor.audio.fluence.voicecall=true
 persist.vendor.audio.fluence.voicecomm=true
-persist.vendor.audio.fluence.voicerec=true
 persist.vendor.audio.ha_proxy.enabled=true
+persist.vendor.audio.spv4.enable=true
+persist.vendor.audio.vbat.enabled=true
 persist.vendor.audio.voicecall.speaker.stereo=true
-persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
-ro.config.media_vol_steps=30
-ro.config.vc_call_vol_steps=9
-ro.vendor.audio.sdk.fluencetype=fluence
-ro.vendor.audio.sdk.ssr=false
 vendor.audio.adm.buffering.ms=2
-vendor.audio.enable.mirrorlink=false
 vendor.audio.feature.a2dp_offload.enable=true
 vendor.audio.feature.afe_proxy.enable=true
 vendor.audio.feature.battery_listener.enable=true
@@ -36,6 +31,7 @@ vendor.audio.feature.multi_voice_session.enable=true
 vendor.audio.feature.power_mode.enable=true
 vendor.audio.feature.ras.enable=true
 vendor.audio.feature.snd_mon.enable=true
+vendor.audio.feature.spkr_prot.enable=true
 vendor.audio.feature.src_trkn.enable=true
 vendor.audio.feature.ssrec.enable=true
 vendor.audio.feature.usb_offload.enable=true
@@ -48,7 +44,7 @@ vendor.audio.hw.aac.encoder=true
 vendor.audio.offload.buffer.size.kb=32
 vendor.audio.offload.gapless.enabled=true
 vendor.audio.offload.track.enable=true
-vendor.audio.safx.pbe.enabled=false
+vendor.audio.spkr_prot.tx.sampling_rate=48000
 vendor.audio.use.sw.alac.decoder=true
 vendor.audio.use.sw.ape.decoder=true
 vendor.audio.use.sw.mpegh.decoder=true
@@ -62,7 +58,6 @@ vendor.voice.path.for.pcm.voip=true
 persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac-lc3
 persist.bluetooth.a2dp_offload.disabled=false
 persist.sys.fflag.override.settings_bluetooth_hearing_aid=true
-persist.vendor.bluetooth.modem_nv_support=true
 persist.vendor.bt.aac_frm_ctl.enabled=true
 persist.vendor.bt.aac_vbr_frm_ctl.enabled=true
 persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptiver2
@@ -71,9 +66,11 @@ persist.vendor.qcom.bluetooth.aac_vbr_ctl.enabled=true
 persist.vendor.qcom.bluetooth.aptxadaptiver2_1_support=true
 ro.bluetooth.a2dp_offload.supported=true
 
+# Camera
+vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.challegram
+
 # Chipset
 ro.soc.manufacturer=Qualcomm
-ro.soc.model=SM8350
 
 # Crypto
 ro.crypto.dm_default_key.options_format.version=2
@@ -91,7 +88,6 @@ vendor.display.disable_hw_recovery_dump=1
 vendor.display.disable_offline_rotator=1
 vendor.display.enable_async_powermode=0
 vendor.display.enable_optimize_refresh=1
-vendor.display.primary_mixer_stages=9
 
 # DRM
 drm.service.enabled=true
@@ -129,20 +125,22 @@ ro.incremental.enable=yes
 # Media
 debug.stagefright.ccodec=4
 debug.stagefright.omx_default_rank=0
-vendor.media.vpp.enable=0
-vendor.media.vpp.osie.enable=0
-vendor.media.vpp.sr.enable=0
+
+# Netflix
+ro.netflix.bsp_rev=Q875-32408-1
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 
+# QTEE
+persist.vendor.qteeconnector.retrying_interval=30
+persist.vendor.qteeconnector.retrying_timeout=2000
+
 # Radio
 persist.vendor.radio.custom_ecc=1
-persist.vendor.radio.force_on_dc=true
-persist.vendor.radio.poweron_opt=1
 persist.vendor.radio.procedure_bytes=SKIP
 persist.vendor.radio.rat_on=combine
-persist.vendor.radio.stack_id_1=1
+ro.telephony.default_network=33,33
 
 # Sensors
 persist.vendor.sensors.allow_non_default_discovery=true
@@ -153,6 +151,3 @@ persist.vendor.sensors.sync_request=true
 sys.usb.mtp.batchcancel=1
 vendor.usb.diag.func.name=ffs
 vendor.usb.use_ffs_mtp=1
-
-# WiFi
-wifi.aware.interface=wifi-aware0
