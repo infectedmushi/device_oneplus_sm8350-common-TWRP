@@ -73,13 +73,8 @@ vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.chall
 ro.soc.manufacturer=Qualcomm
 
 # Crypto
-ro.crypto.type=file
 ro.crypto.dm_default_key.options_format.version=2
 ro.crypto.volume.metadata.method=dm-default-key
-ro.crypto.volume.options=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized+wrappedkey_v0
-ro.crypto.metadata.enabled=true
-ro.crypto.state=encrypted
-
 
 # DPM
 persist.vendor.dpm.idletimer.mode=default
