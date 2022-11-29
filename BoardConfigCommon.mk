@@ -102,7 +102,8 @@ BOARD_KERNEL_CMDLINE := \
     service_locator.enable=1 \
     swiotlb=0 \
     ip6table_raw.raw_before_defrag=1 \
-    iptable_raw.raw_before_defrag=1
+    iptable_raw.raw_before_defrag=1 \
+    androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DTBO := true
@@ -117,6 +118,9 @@ BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.l
 BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.load.recovery))
 BOOT_KERNEL_MODULES := $(strip $(shell cat $(COMMON_PATH)/modules.load.recovery))
 TARGET_MODULE_ALIASES += wlan.ko:qca_cld3_wlan.ko
+
+#BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.load.recovery))
+#BOARD_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.load.recovery))
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
