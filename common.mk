@@ -5,7 +5,9 @@
 #
 
 # A/B
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+#$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
+
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -321,7 +323,9 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # Overlays
-#$(call inherit-product, hardware/oplus/overlay/qssi/qssi.mk)
+$(call inherit-product, hardware/oplus/overlay/qssi/qssi.mk)
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_PACKAGES += \
