@@ -596,8 +596,4 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="aidl">
-        <name>android.hardware.vibrator</name>
-        <fqname>IVibrator/default</fqname>
-    </hal>
 </manifest>
