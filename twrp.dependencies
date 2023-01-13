@@ -1,7 +1,14 @@
 [
   {
     "remote": "github",
-    "repository": "nebrassy/android_kernel_oneplus_sm8350",
+    "repository": "LineageOS/android_hardware_oplus",
     "target_path": "kernel/oneplus/sm8350",
+    "branch": "lineage-19.1",
+  }
+  {
+    "remote": "github",
+    "repository": "LineageOS/android_hardware_oplus",
+    "target_path": "hardware/oplus",
+    "branch": "lineage-19.1",
   }
 ]
