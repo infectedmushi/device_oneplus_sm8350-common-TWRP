@@ -69,24 +69,6 @@ PRODUCT_PACKAGES += \
     libhidltransport.vendor \
     libhwbinder.vendor
 
-# Init
-PRODUCT_PACKAGES += \
-    fstab.default \
-    fstab.default.vendor_ramdisk \
-    init.class_main.sh \
-    init.oplus.hw.rc \
-    init.oplus.hw.rc.recovery \
-    init.oplus.rc \
-    init.oplus.sh \
-    init.qcom.early_boot.sh \
-    init.qcom.rc \
-    init.qcom.sh \
-    init.qcom.usb.rc \
-    init.qcom.usb.sh \
-    init.target.rc \
-    ueventd.oplus.rc \
-    ueventd.qcom.rc
-
 # Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1.vendor
